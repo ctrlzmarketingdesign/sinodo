@@ -1,0 +1,1903 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O Sínodo do Cavaleiro Templário</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+              serif: ["Playfair Display", "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"],
+              mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Style Sheet -->
+    <style>
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #08080a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #27272a;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #3f3f46;
+      }
+      
+      /* Emotion Highlight Elements */
+      .emotion-highlight {
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        border-radius: 3px;
+        padding: 2px 4px;
+        transition: all 0.2s ease;
+      }
+      
+      /* Pulse Animation */
+      @keyframes pulse-red {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.05); }
+      }
+      .pulse-red {
+        animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      
+      /* Custom Selections */
+      ::selection {
+        background-color: rgba(239, 68, 68, 0.3);
+        color: #ffffff;
+      }
+      
+      /* Simple wave animations */
+      @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      .wave-bounce {
+        animation: bounce-slow 1s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0c0c0c] text-[#d4d4d8] font-sans min-h-screen flex flex-col select-none">
+    
+    <!-- Header Bar -->
+    <header class="border-b border-[#27272a] bg-[#09090b] px-6 sm:px-8 py-5 shrink-0 flex flex-col sm:flex-row justify-between items-center gap-4 relative overflow-hidden">
+      <!-- Decorative background line -->
+      <div class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#ef4444]/40 to-transparent"></div>
+      
+      <div class="flex items-center gap-3.5 z-10">
+        <div class="w-10 h-10 border border-[#27272a] bg-[#111113] rounded flex items-center justify-center text-[#ef4444] shadow-inner select-none font-serif text-xl">
+          †
+        </div>
+        <div>
+          <h1 class="text-lg font-serif italic text-white leading-none tracking-wide">O Sínodo do Cavaleiro Templário</h1>
+          <p class="text-[9px] font-mono text-[#52525b] uppercase tracking-[0.25em] mt-1.5">Inteligência Litúrgica & Síntese de Voz Medieval</p>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-4 z-10 text-right">
+        <div class="hidden sm:block">
+          <span class="block text-[8px] font-mono text-[#52525b] uppercase tracking-wider">Servidor de Presença</span>
+          <div class="flex items-center gap-1.5 justify-end mt-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest">SÍNODO ONLINE</span>
+          </div>
+        </div>
+        
+        <div class="border-l border-[#27272a] pl-4">
+          <span class="block text-[8px] font-mono text-[#52525b] uppercase tracking-wider">Tempo Atual</span>
+          <span id="current-time-display" class="font-mono text-xs text-[#a1a1aa] block mt-1">15:00:00 (UTC)</span>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main Full-Screen Layout -->
+    <main class="flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
+      
+      <!-- Left Column: Character Profile & Archetype -->
+      <div class="w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r border-[#27272a] p-6 sm:p-8 flex flex-col justify-between overflow-y-auto shrink-0 bg-[#0a0a0a]">
+        <div class="space-y-10">
+          
+          <!-- Archetype Profile -->
+          <section>
+            <h2 class="text-[10px] uppercase tracking-[0.2em] text-[#71717a] mb-6 font-mono border-b border-[#27272a]/40 pb-2">
+              Perfil do Arquétipo
+            </h2>
+            
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 border border-[#27272a] bg-[#121212] flex items-center justify-center text-[#ef4444] font-serif text-2xl select-none">
+                  †
+                </div>
+                <div>
+                  <h3 class="font-serif italic text-lg text-[#e4e4e7]">Sir Alistair de Vance</h3>
+                  <p class="text-[10px] uppercase tracking-wider text-[#52525b] font-mono">Guardião da Cripta Sagrada</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 pt-2">
+                <div class="border border-[#27272a] p-3 bg-[#111111]/40">
+                  <span class="block text-[9px] uppercase tracking-wider text-[#52525b] font-mono mb-1">Idade Física</span>
+                  <span class="text-xl font-serif text-[#e4e4e7]">55 Anos</span>
+                </div>
+                <div class="border border-[#27272a] p-3 bg-[#111111]/40">
+                  <span class="block text-[9px] uppercase tracking-wider text-[#52525b] font-mono mb-1">Origem</span>
+                  <span class="text-xl font-serif text-[#e4e4e7]">Jerusalém, 1170</span>
+                </div>
+                <div class="border border-[#27272a] p-3 bg-[#111111]/40 col-span-2">
+                  <span class="block text-[9px] uppercase tracking-wider text-[#52525b] font-mono mb-1">Condição de Existência</span>
+                  <span class="text-sm font-serif text-[#e4e4e7] block leading-snug">Imortalidade Cicatrizada, Condenado ao Tempo</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Vocal Texture Card -->
+          <section class="bg-[#141417] p-5 border-l-2 border-[#ef4444]">
+            <h3 class="text-[10px] uppercase tracking-[0.15em] font-mono font-bold text-[#e4e4e7] mb-2 flex items-center gap-1.5">
+              <i data-lucide="volume-2" class="h-3.5 w-3.5 text-[#ef4444]"></i>
+              Textura Vocal
+            </h3>
+            <p class="text-xs text-[#a1a1aa] leading-relaxed italic">
+              "Um timbre que carrega a poeira e o remorso de séculos. A fadiga é audível em cada sílaba, com uma ressonância de peito cansada. Português do Brasil arcaico, melancólico, pesado e pausado."
+            </p>
+          </section>
+          
+          <!-- Voice Model Presets -->
+          <section class="space-y-3">
+            <span class="block text-[10px] uppercase tracking-[0.2em] text-[#71717a] font-mono">
+              Modulação Sínoda Ativa
+            </span>
+            <div class="grid grid-cols-1 gap-2">
+              <div class="flex flex-col text-left p-3 border border-[#ef4444] bg-[#ef4444]/5 text-[#e4e4e7] rounded">
+                <div class="flex justify-between items-center w-full">
+                  <span class="font-serif italic text-sm">Charon (Sombria & Fúnebre)</span>
+                  <span class="text-[8px] font-mono bg-[#ef4444] text-white px-1 py-0.2 rounded">ATIVO</span>
+                </div>
+                <span class="text-[10px] text-[#a1a1aa] mt-1 leading-snug">Ressonância profunda de catacumba medieval, extremamente melancólica.</span>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        <!-- Aesthetic Watermark Footer -->
+        <div class="relative mt-8 pt-8 border-t border-[#27272a]/40">
+          <div class="absolute -bottom-8 -left-6 text-[100px] font-serif font-black opacity-[0.03] select-none pointer-events-none text-[#ef4444]">
+            1118
+          </div>
+          <div class="text-[9px] uppercase tracking-[0.4em] text-[#3f3f46] font-mono">
+            Sussurros de séculos
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column: Interactive Area (TTS & Audio Conversion) -->
+      <div class="flex-1 flex flex-col overflow-y-auto lg:overflow-hidden bg-[#0c0c0e]">
+        
+        <!-- Navigation Tabs -->
+        <div class="flex border-b border-[#27272a] bg-[#0e0e0e] shrink-0">
+          <button id="tab-tts-btn" class="flex-1 py-4 px-6 font-serif text-sm tracking-widest uppercase transition-all border-b-2 border-[#ef4444] text-[#e4e4e7] bg-[#141416]/50">
+            01. Transmutação de Texto
+          </button>
+          <button id="tab-audio-btn" class="flex-1 py-4 px-6 font-serif text-sm tracking-widest uppercase transition-all border-b-2 border-transparent text-[#52525b] hover:text-[#a1a1aa]">
+            02. Alquimia de Voz
+          </button>
+        </div>
+        
+        <!-- Tab Contents Wrapper -->
+        <div class="flex-1 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto lg:overflow-hidden gap-6">
+          
+          <!-- Inline Error Banner (Hidden by default) -->
+          <div id="error-banner" class="hidden border border-red-900/50 bg-red-950/20 text-red-300 px-4 py-3 text-xs flex items-start gap-2.5 rounded font-mono shrink-0">
+            <i data-lucide="alert-triangle" class="h-4 w-4 text-red-500 shrink-0 mt-0.5"></i>
+            <div class="flex-1">
+              <span id="error-banner-message">Mensagem de erro explicativa do sistema.</span>
+            </div>
+            <button onclick="hideError()" class="text-red-400 hover:text-white font-bold">&times;</button>
+          </div>
+          
+          <!-- Active Form Segment -->
+          <div class="flex-1 flex flex-col lg:overflow-hidden">
+            
+            <!-- Tab 1: Text-To-Speech (TTS) -->
+            <div id="form-tts" class="flex-1 flex flex-col lg:overflow-hidden gap-4">
+              <div class="flex justify-between items-center">
+                <h2 class="text-xl font-serif italic text-[#e4e4e7]">Oráculo de Texto</h2>
+                <span class="text-[10px] font-mono bg-[#27272a] px-2 py-1 rounded text-[#a1a1aa]">
+                  MODO: TEXT-TO-SPEECH
+                </span>
+              </div>
+              
+              <!-- Sentiments Bar (Régua de Sentimentos) -->
+              <div class="space-y-2 shrink-0">
+                <span class="block text-[10px] uppercase tracking-[0.2em] text-[#71717a] font-mono">
+                  Régua de Sentimentos (Selecione parte do texto e clique para aplicar)
+                </span>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2" id="emotions-grid">
+                  <!-- Generated dynamically via Javascript -->
+                </div>
+              </div>
+              
+              <!-- ContentEditable Text Editor -->
+              <div class="relative flex-1 flex flex-col lg:overflow-hidden gap-1">
+                <div 
+                  id="tts-editable-editor"
+                  contenteditable="true"
+                  class="flex-1 bg-[#09090b]/80 border border-[#27272a] p-5 text-lg font-serif text-[#e4e4e7] italic focus:outline-none focus:border-[#ef4444]/40 focus:ring-1 focus:ring-[#ef4444]/20 overflow-y-auto min-h-[160px] leading-relaxed select-text cursor-text rounded"
+                  style="outline: none;"
+                ></div>
+                <div class="absolute bottom-2 right-3 text-[8px] font-mono text-[#52525b] pointer-events-none select-none uppercase tracking-wider">
+                  Dica: Selecione palavras para aplicar marcadores de sentimento
+                </div>
+              </div>
+              
+              <div class="flex justify-between items-center text-[10px] font-mono text-[#52525b]">
+                <span id="selected-emotion-info">Sentimento ativo: Melancolia</span>
+                <span id="char-counter">0/500 caracteres</span>
+              </div>
+            </div>
+            
+            <!-- Tab 2: Voice-To-Voice (Audio convert) (Hidden by default) -->
+            <div id="form-audio" class="hidden flex-1 flex flex-col lg:overflow-hidden gap-6">
+              <div class="flex justify-between items-center">
+                <h2 class="text-xl font-serif italic text-[#e4e4e7]">Alquimia de Voz para Voz</h2>
+                <span class="text-[10px] font-mono bg-[#27272a] px-2 py-1 rounded text-[#a1a1aa]">
+                  MODO: VOICE-TO-VOICE
+                </span>
+              </div>
+              
+              <!-- Action selectors (Repeat vs Reply) -->
+              <div class="grid grid-cols-2 gap-3 shrink-0">
+                <button id="action-repeat-btn" class="py-3 px-4 text-center border font-mono text-xs uppercase tracking-wider transition-all border-[#ef4444] bg-[#ef4444]/5 text-[#e4e4e7]">
+                  <span class="block font-serif italic text-sm text-[#e4e4e7] normal-case mb-1">Repetir Verbatim</span>
+                  Modular minha fala
+                </button>
+                <button id="action-reply-btn" class="py-3 px-4 text-center border font-mono text-xs uppercase tracking-wider transition-all border-[#27272a] bg-[#0f0f11] text-[#71717a] hover:border-[#52525b]">
+                  <span class="block font-serif italic text-sm text-[#e4e4e7] normal-case mb-1">Responder Dialogando</span>
+                  Pedir conselho ao templário
+                </button>
+              </div>
+              
+              <!-- Input choice: Record or Upload -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1 lg:overflow-hidden min-h-[220px]">
+                
+                <!-- Option A: Microphone Recording -->
+                <div class="border border-[#27272a] p-5 flex flex-col justify-between bg-[#0e0e10]/40 rounded relative overflow-hidden">
+                  <div>
+                    <span class="text-[10px] uppercase text-[#71717a] tracking-wider font-mono block mb-2">Opção A: Gravar via Microfone</span>
+                    <p class="text-xs text-[#52525b] leading-relaxed">Fale diretamente com o sínodo. Suas palavras serão recolhidas.</p>
+                  </div>
+                  
+                  <!-- Recording Wave Animation & Status Timer -->
+                  <div class="my-4 flex flex-col items-center justify-center gap-3">
+                    <div id="recording-wave" class="flex items-center gap-1.5 h-8 text-[#3f3f46]">
+                      <span class="w-1 bg-[#27272a] h-3"></span>
+                      <span class="w-1 bg-[#27272a] h-3"></span>
+                      <span class="w-1 bg-[#27272a] h-3"></span>
+                      <span class="w-1 bg-[#27272a] h-3"></span>
+                      <span class="w-1 bg-[#27272a] h-3"></span>
+                    </div>
+                    <span id="recording-timer-text" class="font-mono text-lg text-[#e4e4e7] tracking-widest">0:00</span>
+                  </div>
+                  
+                  <div class="flex gap-2">
+                    <button id="record-action-btn" class="flex-1 py-2.5 bg-[#ef4444] text-white text-xs font-mono uppercase tracking-wider hover:bg-red-600 transition-colors flex items-center justify-center gap-2">
+                      <i data-lucide="mic" class="h-4 w-4"></i>
+                      <span id="record-action-text">Iniciar Gravação</span>
+                    </button>
+                  </div>
+                </div>
+                
+                <!-- Option B: File Drop Upload -->
+                <div id="drop-zone" class="border-2 border-dashed border-[#27272a] p-5 flex flex-col justify-between items-center text-center bg-[#0d0d0f]/20 hover:border-[#52525b] hover:bg-[#121215]/30 transition-all cursor-pointer rounded">
+                  <input type="file" id="hidden-audio-file" accept="audio/*" class="hidden" />
+                  
+                  <div class="w-full flex justify-between items-center border-b border-[#27272a]/40 pb-2 mb-2">
+                    <span class="text-[10px] uppercase text-[#71717a] tracking-wider font-mono block">Opção B: Arquivo de Áudio</span>
+                    <i data-lucide="upload" class="h-3.5 w-3.5 text-[#52525b]"></i>
+                  </div>
+                  
+                  <div class="my-2 space-y-1">
+                    <p class="text-sm text-[#e4e4e7] font-serif italic">Arraste ou clique para selecionar</p>
+                    <p class="text-[10px] text-[#52525b] uppercase tracking-wider font-mono">WAV, MP3, OGG ou M4A (MÁX. 15MB)</p>
+                  </div>
+                  
+                  <div id="active-file-indicator" class="hidden w-full mt-2 p-2 bg-[#18181b]/60 border border-[#27272a] text-left text-xs font-mono flex items-center justify-between">
+                    <div class="truncate pr-4 text-[#a1a1aa]">
+                      <span class="text-[#71717a] block text-[8px] uppercase">Arquivo Ativo</span>
+                      <span id="active-filename">arquivo.mp3</span>
+                    </div>
+                    <button id="clear-file-btn" class="text-xs text-red-500 hover:text-red-400 p-1">&times;</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Bottom Parameters Panel & Trigger -->
+          <div class="space-y-4 shrink-0">
+            <!-- 4 Aesthetic Slider Controls -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-[#09090b]/80 border border-[#27272a] p-4 rounded">
+              <!-- Slider 1 -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between items-center text-[10px] font-mono uppercase tracking-tighter">
+                  <span id="slider-weight-title" class="text-[#52525b]">Peso Emocional</span>
+                  <span id="slider-weight-val" class="text-[#a1a1aa]">85%</span>
+                </div>
+                <input type="range" min="0" max="100" value="85" id="input-emotional-weight" class="w-full accent-[#ef4444] bg-[#27272a] h-[3px] rounded appearance-none cursor-pointer" />
+              </div>
+              
+              <!-- Slider 2 -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between items-center text-[10px] font-mono uppercase tracking-tighter">
+                  <span class="text-[#52525b]">Modulação de Tom</span>
+                  <span id="slider-pitch-val" class="text-[#a1a1aa]">45%</span>
+                </div>
+                <input type="range" min="0" max="100" value="45" id="input-pitch" class="w-full accent-[#ef4444] bg-[#27272a] h-[3px] rounded appearance-none cursor-pointer" />
+              </div>
+              
+              <!-- Slider 3 -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between items-center text-[10px] font-mono uppercase tracking-tighter">
+                  <span class="text-[#52525b]">Cadência da Voz</span>
+                  <span id="slider-rate-val" class="text-[#a1a1aa]">60%</span>
+                </div>
+                <input type="range" min="0" max="100" value="60" id="input-rate" class="w-full accent-[#ef4444] bg-[#27272a] h-[3px] rounded appearance-none cursor-pointer" />
+              </div>
+              
+              <!-- Slider 4 -->
+              <div class="space-y-1.5">
+                <div class="flex justify-between items-center text-[10px] font-mono uppercase tracking-tighter">
+                  <span class="text-[#52525b]">Frequência de Pausa</span>
+                  <span id="slider-pause-val" class="text-[#a1a1aa]">70%</span>
+                </div>
+                <input type="range" min="0" max="100" value="70" id="input-pause" class="w-full accent-[#ef4444] bg-[#27272a] h-[3px] rounded appearance-none cursor-pointer" />
+              </div>
+            </div>
+            
+            <!-- Generate triggers -->
+            <div class="flex flex-col sm:flex-row gap-3">
+              <!-- TTS Button -->
+              <button id="trigger-tts-btn" class="w-full sm:w-auto px-8 py-3.5 bg-[#e4e4e7] text-[#09090b] text-[10px] uppercase font-mono font-bold tracking-[0.25em] hover:bg-white hover:text-black transition-all shadow-md flex items-center justify-center gap-2">
+                <i data-lucide="shield" class="h-4 w-4"></i>
+                Proferir Sentença
+              </button>
+              
+              <!-- Audio Conversion Button (Hidden in TTS tab) -->
+              <button id="trigger-audio-btn" class="hidden w-full sm:w-auto px-8 py-3.5 bg-[#e4e4e7] text-[#09090b] text-[10px] uppercase font-mono font-bold tracking-[0.25em] hover:bg-white hover:text-black transition-all shadow-md flex items-center justify-center gap-2 disabled:bg-[#27272a] disabled:text-[#71717a] disabled:cursor-not-allowed">
+                <i data-lucide="sparkles" class="h-4 w-4"></i>
+                Transmutar Voz
+              </button>
+              
+              <!-- System Loading Spinner (Hidden by default) -->
+              <div id="system-spinner" class="hidden flex items-center gap-3 px-4 text-[#a1a1aa] text-xs font-mono">
+                <div class="w-4 h-4 border-2 border-t-transparent border-[#ef4444] rounded-full animate-spin"></div>
+                <span id="spinner-text">Consultando oráculo...</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Result Player / Audio Output Panel (Renders when we have active content) -->
+          <div id="result-panel" class="hidden bg-[#111112] border-t border-[#27272a] p-6 shrink-0 relative overflow-hidden rounded">
+            <div class="absolute top-0 left-0 w-1 h-full bg-[#ef4444]"></div>
+            
+            <div class="flex flex-col gap-5">
+              <!-- Header info & core triggers -->
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div>
+                  <h3 class="text-xs uppercase tracking-wider text-[#71717a] font-mono">Resposta Gerada do Cavaleiro</h3>
+                  <span id="result-voice-badge" class="text-[9px] font-mono bg-[#27272a] px-1.5 py-0.5 rounded text-[#a1a1aa] inline-block mt-1">VOZ: CHARON</span>
+                </div>
+                
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                  <button id="translate-english-btn" class="px-4 py-2 border border-[#ef4444]/60 bg-[#ef4444]/5 hover:bg-[#ef4444]/15 transition-all flex items-center gap-2 text-[10px] font-mono text-[#e4e4e7] uppercase tracking-wider">
+                    <i data-lucide="languages" class="h-3.5 w-3.5 text-[#ef4444]"></i>
+                    Tradução Medieval Inglesa
+                  </button>
+                </div>
+              </div>
+              
+              <!-- WAV Custom Player -->
+              <div class="flex items-center gap-4 bg-[#111113] p-3 border border-[#27272a] text-xs shrink-0 rounded">
+                <button id="player-play-btn" class="w-8 h-8 rounded-full bg-[#27272a] hover:bg-[#3f3f46] text-white flex items-center justify-center shrink-0" title="Reproduzir / Pausar">
+                  <i data-lucide="play" class="h-4 w-4"></i>
+                </button>
+                <div class="flex-1 flex items-center gap-2">
+                  <span id="player-time-current" class="font-mono text-[10px] text-[#71717a]">0:00</span>
+                  <input type="range" min="0" max="100" value="0" id="player-seekbar" class="flex-1 accent-[#ef4444] bg-[#27272a] h-[3px] rounded appearance-none cursor-pointer" />
+                  <span id="player-time-total" class="font-mono text-[10px] text-[#71717a]">0:00</span>
+                </div>
+                <!-- Download Button -->
+                <button id="player-download-btn" class="w-8 h-8 rounded-full bg-[#27272a] hover:bg-[#3f3f46] text-[#ef4444] flex items-center justify-center shrink-0" title="Baixar Áudio em Português (BR)">
+                  <i data-lucide="download" class="h-4 w-4"></i>
+                </button>
+                <!-- Hidden Audio Element -->
+                <audio id="global-audio-element"></audio>
+              </div>
+              
+              <!-- Content outputs (Portuguese Speech + Optional Knight Reply) -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Transcript / User speech -->
+                <div class="space-y-1.5">
+                  <span class="block text-[8px] uppercase tracking-wider text-[#52525b] font-mono">Texto Proferido</span>
+                  <p id="result-transcription" class="text-sm font-serif italic text-[#a1a1aa] leading-relaxed">"O texto literal em português aparecerá aqui..."</p>
+                </div>
+                
+                <!-- Character dialogue / reply (if active) -->
+                <div id="result-reply-container" class="space-y-1.5 hidden">
+                  <span class="block text-[8px] uppercase tracking-wider text-[#52525b] font-mono">Diálogo de Sir Alistair</span>
+                  <p id="result-reply-text" class="text-sm font-serif italic text-white font-semibold leading-relaxed">"A resposta filosófica do cavaleiro medieval aparecerá aqui..."</p>
+                </div>
+              </div>
+              
+              <!-- Translation to Medieval English area (Collapsible) -->
+              <div id="english-translation-area" class="hidden bg-[#0a0a0c] border border-[#27272a] p-4 space-y-4 rounded">
+                <div class="flex justify-between items-center">
+                  <h4 class="text-[10px] font-mono uppercase tracking-wider text-[#71717a]">Tradução para Inglês Arcaico</h4>
+                  
+                  <button id="listen-english-btn" class="px-3 py-1.5 border border-dashed border-[#52525b] hover:border-[#e4e4e7] hover:bg-[#18181b]/40 transition-all flex items-center gap-1.5 text-[9px] font-mono text-[#e4e4e7] uppercase tracking-wider">
+                    <i data-lucide="music" class="h-3 w-3 text-[#ef4444]"></i>
+                    Ouvir em Inglês Medieval
+                  </button>
+                </div>
+                
+                <p id="result-english-text" class="text-sm font-serif italic text-[#a1a1aa] leading-relaxed">"Hark! The translation into medieval english shall be rendered here..."</p>
+                
+                <!-- Secondary English WAV Player -->
+                <div id="english-player-panel" class="hidden flex items-center gap-3 bg-[#111113] p-2.5 border border-[#27272a] text-xs rounded">
+                  <button id="english-play-btn" class="w-7 h-7 rounded-full bg-[#27272a] hover:bg-[#3f3f46] text-white flex items-center justify-center shrink-0" title="Reproduzir / Pausar">
+                    <i data-lucide="play" class="h-3.5 w-3.5"></i>
+                  </button>
+                  <div class="flex-1 flex items-center gap-2">
+                    <span id="english-time-current" class="font-mono text-[9px] text-[#71717a]">0:00</span>
+                    <input type="range" min="0" max="100" value="0" id="english-seekbar" class="flex-1 accent-[#ef4444] bg-[#27272a] h-[3px] rounded appearance-none cursor-pointer" />
+                    <span id="english-time-total" class="font-mono text-[9px] text-[#71717a]">0:00</span>
+                  </div>
+                  <!-- English Download Button -->
+                  <button id="english-download-btn" class="w-7 h-7 rounded-full bg-[#27272a] hover:bg-[#3f3f46] text-[#ef4444] flex items-center justify-center shrink-0" title="Baixar Áudio em Inglês Medieval">
+                    <i data-lucide="download" class="h-3.5 w-3.5"></i>
+                  </button>
+                  <!-- Hidden English Audio -->
+                  <audio id="english-audio-element"></audio>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- History Section (List of Transmutations) -->
+          <section class="bg-[#0e0e0f] border-t border-[#27272a] p-6 sm:p-8 shrink-0">
+            <div class="flex justify-between items-center mb-6">
+              <div class="flex items-center gap-2">
+                <i data-lucide="history" class="h-4 w-4 text-[#ef4444]"></i>
+                <h3 class="font-serif italic text-base text-white">Registros de Sentenças Anteriores</h3>
+              </div>
+              <span id="history-count-badge" class="text-[9px] font-mono bg-[#1c1c1f] px-2 py-0.5 rounded text-[#a1a1aa] border border-[#27272a]">0 REGISTROS</span>
+            </div>
+            
+            <!-- History grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="history-grid-container">
+              <!-- Managed dynamically via JS -->
+            </div>
+            
+            <div id="history-empty-state" class="text-center py-6 border border-dashed border-[#27272a] rounded text-[#52525b] text-xs font-mono uppercase tracking-wider">
+              Nenhuma sentença proferida nesta sessão de vigília.
+            </div>
+          </section>
+          
+        </div>
+        
+        <!-- Footer -->
+        <footer class="bg-[#09090a] border-t border-[#27272a] px-6 sm:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 text-[9px] font-mono text-[#52525b] uppercase tracking-widest shrink-0 mt-auto">
+          <span>† MILITES TEMPLI — ANNO DOMINI 2026</span>
+          <span class="flex items-center gap-1.5">
+            PROJETO DE ORÁCULO EM PORTUGUÊS & INGLÊS COMPILADO SEM DEPENDÊNCIAS
+          </span>
+        </footer>
+        
+      </div>
+    </main>
+    
+    <!-- Scripts -->
+    <script>
+      // --- Configuration & Constants ---
+      const EMOTIONS = [
+        { id: "melancolia", name: "Melancolia", color: "#6366f1", markerColor: "rgba(99, 102, 241, 0.25)", borderColor: "border-indigo-500/40", textColor: "text-indigo-400", desc: "Sinfonia triste e fúnebre de séculos." },
+        { id: "neutro", name: "Neutro", color: "#71717b", markerColor: "rgba(113, 113, 122, 0.25)", borderColor: "border-zinc-500/40", textColor: "text-zinc-400", desc: "Controle estóico sob o fardo eterno." },
+        { id: "alegre", name: "Alegre", color: "#eab308", markerColor: "rgba(234, 179, 8, 0.25)", borderColor: "border-amber-500/40", textColor: "text-amber-400", desc: "Ecos distantes de uma era de glória." },
+        { id: "raiva", name: "Raiva", color: "#ef4444", markerColor: "rgba(239, 68, 68, 0.25)", borderColor: "border-red-500/40", textColor: "text-red-400", desc: "Rancor e fúria de batalhas antigas." },
+        { id: "tenso", name: "Tenso", color: "#f97316", markerColor: "rgba(249, 115, 22, 0.25)", borderColor: "border-orange-500/40", textColor: "text-orange-400", desc: "Rigidez na iminência do perigo sagrado." },
+        { id: "emotivo", name: "Emotivo", color: "#ec4899", markerColor: "rgba(236, 72, 153, 0.25)", borderColor: "border-pink-500/40", textColor: "text-pink-400", desc: "Coração tocado pela dor da perda mundana." },
+        { id: "cansado", name: "Cansado", color: "#14b8a6", markerColor: "rgba(20, 184, 166, 0.25)", borderColor: "border-teal-500/40", textColor: "text-teal-400", desc: "Fadiga profunda de quem já viu tudo passar." },
+        { id: "solene", name: "Solene", color: "#10b981", markerColor: "rgba(16, 185, 129, 0.25)", borderColor: "border-emerald-500/40", textColor: "text-emerald-400", desc: "Postura sagrada diante do altar divino." },
+        { id: "sombrio", name: "Sombrio", color: "#8b5cf6", markerColor: "rgba(139, 92, 246, 0.25)", borderColor: "border-purple-500/40", textColor: "text-purple-400", desc: "Segredos obscuros guardados em criptas frias." },
+        { id: "resignado", name: "Resignado", color: "#3b82f6", markerColor: "rgba(59, 130, 246, 0.25)", borderColor: "border-blue-500/40", textColor: "text-blue-400", desc: "Submissão pacífica ao destino inexorável." }
+      ];
+      
+      // --- Application States ---
+      let selectedVoice = "Charon";
+      let activeTab = "tts"; // "tts" or "audio"
+      let activeEmotionId = "melancolia";
+      let audioAction = "repeat"; // "repeat" or "reply"
+      
+      let isRecording = false;
+      let recordInterval = null;
+      let recordingDuration = 0;
+      let uploadedFile = null;
+      let audioBlobUrl = null;
+      
+      let isTtsLoading = false;
+      let isAudioLoading = false;
+      let isEnglishTtsLoading = false;
+      
+      let latestResult = null; // { transcription, characterText, audioUrl, translation, translationWithTags, englishAudioUrl }
+      let historyItems = [];
+      let activeGlobalAudioBlobUrl = null;
+      let activeEnglishAudioBlobUrl = null;
+      
+      // --- DOM Elements ---
+      const tabTtsBtn = document.getElementById("tab-tts-btn");
+      const tabAudioBtn = document.getElementById("tab-audio-btn");
+      const formTts = document.getElementById("form-tts");
+      const formAudio = document.getElementById("form-audio");
+      
+      const actionRepeatBtn = document.getElementById("action-repeat-btn");
+      const actionReplyBtn = document.getElementById("action-reply-btn");
+      
+      const ttsEditor = document.getElementById("tts-editable-editor");
+      const selectedEmotionInfo = document.getElementById("selected-emotion-info");
+      const charCounter = document.getElementById("char-counter");
+      
+      const recordActionBtn = document.getElementById("record-action-btn");
+      const recordActionText = document.getElementById("record-action-text");
+      const recordingWave = document.getElementById("recording-wave");
+      const recordingTimerText = document.getElementById("recording-timer-text");
+      
+      const dropZone = document.getElementById("drop-zone");
+      const hiddenAudioFile = document.getElementById("hidden-audio-file");
+      const activeFileIndicator = document.getElementById("active-file-indicator");
+      const activeFilename = document.getElementById("active-filename");
+      const clearFileBtn = document.getElementById("clear-file-btn");
+      
+      const sliderWeightTitle = document.getElementById("slider-weight-title");
+      const sliderWeightVal = document.getElementById("slider-weight-val");
+      const sliderPitchVal = document.getElementById("slider-pitch-val");
+      const sliderRateVal = document.getElementById("slider-rate-val");
+      const sliderPauseVal = document.getElementById("slider-pause-val");
+      
+      const inputWeight = document.getElementById("input-emotional-weight");
+      const inputPitch = document.getElementById("input-pitch");
+      const inputRate = document.getElementById("input-rate");
+      const inputPause = document.getElementById("input-pause");
+      
+      const triggerTtsBtn = document.getElementById("trigger-tts-btn");
+      const triggerAudioBtn = document.getElementById("trigger-audio-btn");
+      const systemSpinner = document.getElementById("system-spinner");
+      const spinnerText = document.getElementById("spinner-text");
+      
+      const errorBanner = document.getElementById("error-banner");
+      const errorBannerMessage = document.getElementById("error-banner-message");
+      
+      // Players
+      const resultPanel = document.getElementById("result-panel");
+      const resultVoiceBadge = document.getElementById("result-voice-badge");
+      const playerPlayBtn = document.getElementById("player-play-btn");
+      const playerTimeCurrent = document.getElementById("player-time-current");
+      const playerTimeTotal = document.getElementById("player-time-total");
+      const playerSeekbar = document.getElementById("player-seekbar");
+      const globalAudioElement = document.getElementById("global-audio-element");
+      
+      const resultTranscription = document.getElementById("result-transcription");
+      const resultReplyContainer = document.getElementById("result-reply-container");
+      const resultReplyText = document.getElementById("result-reply-text");
+      
+      const translateEnglishBtn = document.getElementById("translate-english-btn");
+      const englishTranslationArea = document.getElementById("english-translation-area");
+      const resultEnglishText = document.getElementById("result-english-text");
+      const listenEnglishBtn = document.getElementById("listen-english-btn");
+      const englishPlayerPanel = document.getElementById("english-player-panel");
+      const englishPlayBtn = document.getElementById("english-play-btn");
+      const englishTimeCurrent = document.getElementById("english-time-current");
+      const englishTimeTotal = document.getElementById("english-time-total");
+      const englishSeekbar = document.getElementById("english-seekbar");
+      const englishAudioElement = document.getElementById("english-audio-element");
+      
+      const historyGridContainer = document.getElementById("history-grid-container");
+      const historyCountBadge = document.getElementById("history-count-badge");
+      const historyEmptyState = document.getElementById("history-empty-state");
+      
+      // --- Initialization ---
+      window.addEventListener("DOMContentLoaded", () => {
+        // Initialize UTC clock
+        updateClock();
+        setInterval(updateClock, 1000);
+        
+        // Render 10-emotions bar
+        renderEmotionsGrid();
+        
+        // Setup content editable div default text
+        ttsEditor.innerHTML = `<span data-emotion="melancolia" style="background-color: rgba(99, 102, 241, 0.25); padding: 2px 4px; border-radius: 3px;" class="emotion-highlight">Minha vigília não termina com o sol. Eu vi impérios caírem enquanto minha armadura apenas acumulava ferrugem. O que é o tempo para quem não pode morrer?</span>`;
+        updateCharCounter();
+        
+        // Load history from localStorage
+        loadHistoryFromStorage();
+        
+        // Setup initial triggers
+        setupEventListeners();
+        
+        // Render Lucide icons
+        lucide.createIcons();
+      });
+      
+      // --- Timer & Clock ---
+      function updateClock() {
+        const now = new Date();
+        const hours = String(now.getUTCHours()).padStart(2, "0");
+        const minutes = String(now.getUTCMinutes()).padStart(2, "0");
+        const seconds = String(now.getUTCSeconds()).padStart(2, "0");
+        document.getElementById("current-time-display").textContent = `${hours}:${minutes}:${seconds} (UTC)`;
+      }
+      
+      function formatTime(secs) {
+        const m = Math.floor(secs / 60);
+        const s = Math.floor(secs % 60);
+        return `${m}:${s < 10 ? "0" : ""}${s}`;
+      }
+      
+      // --- Errors ---
+      function showError(msg) {
+        errorBannerMessage.textContent = msg;
+        errorBanner.classList.remove("hidden");
+        errorBanner.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+      
+      function hideError() {
+        errorBanner.classList.add("hidden");
+      }
+      
+      // --- Emotions Grid Render ---
+      function renderEmotionsGrid() {
+        const container = document.getElementById("emotions-grid");
+        container.innerHTML = "";
+        
+        EMOTIONS.forEach(emotion => {
+          const isActive = activeEmotionId === emotion.id;
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = `relative flex items-center gap-2 p-2 border text-left transition-all hover:bg-[#18181b]/60 rounded ${
+            isActive
+              ? `bg-[#18181b] ${emotion.borderColor} text-[#e4e4e7] scale-[1.01] shadow-sm`
+              : "border-[#27272a] bg-[#0c0c0e] text-[#a1a1aa] hover:border-[#3f3f46]"
+          }`;
+          button.style.boxShadow = isActive ? `0 0 8px ${emotion.color}15` : "none";
+          button.title = emotion.desc;
+          
+          // Color indicator dot
+          const dot = document.createElement("span");
+          dot.className = "w-2.5 h-2.5 rounded-full shrink-0 border";
+          dot.style.backgroundColor = emotion.color;
+          dot.style.borderColor = isActive ? "#fff" : `${emotion.color}80`;
+          
+          const labelWrapper = document.createElement("div");
+          labelWrapper.className = "flex-1 min-w-0";
+          const label = document.createElement("span");
+          label.className = "block text-xs font-serif italic truncate";
+          label.textContent = emotion.name;
+          
+          labelWrapper.appendChild(label);
+          button.appendChild(dot);
+          button.appendChild(labelWrapper);
+          
+          button.addEventListener("click", () => applyEmotionToSelection(emotion.id));
+          container.appendChild(button);
+        });
+      }
+      
+      // --- ContentEditable Highlight Logic ---
+      function updateCharCounter() {
+        const text = ttsEditor.innerText || "";
+        charCounter.textContent = `${text.length}/500 caracteres`;
+        if (text.length > 500) {
+          charCounter.classList.add("text-red-500");
+        } else {
+          charCounter.classList.remove("text-red-500");
+        }
+      }
+      
+      function applyEmotionToSelection(emotionId) {
+        const emotion = EMOTIONS.find(e => e.id === emotionId);
+        if (!emotion) return;
+        
+        activeEmotionId = emotionId;
+        renderEmotionsGrid();
+        
+        // Update slider label
+        sliderWeightTitle.textContent = `Peso Emocional (${emotion.name})`;
+        
+        // Check text selection
+        const selection = window.getSelection();
+        if (!selection || selection.rangeCount === 0) {
+          selectedEmotionInfo.textContent = `Sentimento ativo: ${emotion.name}`;
+          return;
+        }
+        
+        const range = selection.getRangeAt(0);
+        const selectedText = range.toString().trim();
+        
+        if (!selectedText) {
+          selectedEmotionInfo.textContent = `Sentimento ativo: ${emotion.name}`;
+          return;
+        }
+        
+        // Create custom styled tag
+        const span = document.createElement("span");
+        span.setAttribute("data-emotion", emotionId);
+        span.className = "emotion-highlight font-serif italic";
+        span.style.backgroundColor = emotion.markerColor;
+        span.style.padding = "2px 4px";
+        span.style.borderRadius = "3px";
+        span.style.transition = "all 0.2s ease";
+        span.textContent = selectedText;
+        
+        range.deleteContents();
+        range.insertNode(span);
+        selection.removeAllRanges();
+        
+        selectedEmotionInfo.textContent = `Sentimento ativo: ${emotion.name} (Aplicado)`;
+        updateCharCounter();
+      }
+      
+      function getAnnotatedSegments() {
+        const segments = [];
+        
+        function traverse(node, currentEmotion) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const text = node.textContent;
+            if (text && text.trim().length > 0) {
+              segments.push({ text, emotion: currentEmotion });
+            }
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            const el = node;
+            const emotion = el.getAttribute("data-emotion") || currentEmotion;
+            el.childNodes.forEach(child => traverse(child, emotion));
+          }
+        }
+        
+        ttsEditor.childNodes.forEach(child => traverse(child, "melancolia"));
+        
+        const rawText = ttsEditor.innerText || "";
+        if (segments.length === 0 && rawText.trim()) {
+          segments.push({ text: rawText, emotion: "melancolia" });
+        }
+        
+        return segments;
+      }
+      
+      // --- Microphone Recording System ---
+      let mediaRecorderInstance = null;
+      let recordedChunks = [];
+      
+      async function startMicRecording() {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          recordedChunks = [];
+          
+          // Use audio/webm if supported, fallback to default
+          let options = {};
+          if (MediaRecorder.isTypeSupported("audio/webm")) {
+            options = { mimeType: "audio/webm" };
+          }
+          
+          mediaRecorderInstance = new MediaRecorder(stream, options);
+          
+          mediaRecorderInstance.ondataavailable = (e) => {
+            if (e.data && e.data.size > 0) {
+              recordedChunks.push(e.data);
+            }
+          };
+          
+          mediaRecorderInstance.onstop = () => {
+            const mimeType = mediaRecorderInstance.mimeType || "audio/webm";
+            const audioBlob = new Blob(recordedChunks, { type: mimeType });
+            audioBlobUrl = URL.createObjectURL(audioBlob);
+            uploadedFile = new File([audioBlob], `gravacao_${Date.now()}.webm`, { type: mimeType });
+            
+            // Render file indicator
+            activeFilename.textContent = `Voz Gravada (${(audioBlob.size / 1024).toFixed(1)} KB)`;
+            activeFileIndicator.classList.remove("hidden");
+            
+            clearInterval(recordInterval);
+            isRecording = false;
+            updateRecordUI();
+          };
+          
+          mediaRecorderInstance.start();
+          isRecording = true;
+          recordingDuration = 0;
+          recordingTimerText.textContent = "0:00";
+          
+          recordInterval = setInterval(() => {
+            recordingDuration++;
+            recordingTimerText.textContent = formatTime(recordingDuration);
+          }, 1000);
+          
+          updateRecordUI();
+        } catch (err) {
+          console.error("Recording error:", err);
+          showError("Não foi possível acessar o seu microfone. Por favor, libere as permissões.");
+        }
+      }
+      
+      function stopMicRecording() {
+        if (mediaRecorderInstance && isRecording) {
+          mediaRecorderInstance.stop();
+          // Release microphone hardware immediately
+          mediaRecorderInstance.stream.getTracks().forEach(track => track.stop());
+        }
+      }
+      
+      function updateRecordUI() {
+        if (isRecording) {
+          recordActionBtn.className = "flex-1 py-2.5 bg-[#e4e4e7] text-[#09090b] text-xs font-mono uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2 animate-pulse rounded";
+          recordActionText.textContent = "Parar Gravação";
+          recordingWave.className = "flex items-center gap-1.5 h-8 text-[#ef4444]";
+          // Turn child spans red and animated
+          Array.from(recordingWave.children).forEach((span, idx) => {
+            span.className = "w-1 bg-[#ef4444] animate-bounce";
+            span.style.height = `${[16, 28, 20, 32, 16][idx]}px`;
+            span.style.animationDelay = `${idx * 0.1}s`;
+          });
+        } else {
+          recordActionBtn.className = "flex-1 py-2.5 bg-[#ef4444] text-white text-xs font-mono uppercase tracking-wider hover:bg-red-600 transition-colors flex items-center justify-center gap-2 rounded";
+          recordActionText.textContent = "Iniciar Gravação";
+          recordingWave.className = "flex items-center gap-1.5 h-8 text-[#3f3f46]";
+          Array.from(recordingWave.children).forEach(span => {
+            span.className = "w-1 bg-[#27272a] h-3";
+            span.style.animation = "none";
+            span.style.height = "12px";
+          });
+        }
+        lucide.createIcons();
+      }
+      
+      // --- File Upload Helpers ---
+      function handleSelectedFile(file) {
+        if (!file.type.startsWith("audio/")) {
+          showError("O arquivo selecionado deve ser um áudio válido.");
+          return;
+        }
+        if (file.size > 15 * 1024 * 1024) {
+          showError("O arquivo de áudio excede o limite de 15MB permitido.");
+          return;
+        }
+        
+        uploadedFile = file;
+        audioBlobUrl = URL.createObjectURL(file);
+        activeFilename.textContent = `${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
+        activeFileIndicator.classList.remove("hidden");
+        hideError();
+      }
+      
+      function clearActiveFile() {
+        uploadedFile = null;
+        if (audioBlobUrl) {
+          URL.revokeObjectURL(audioBlobUrl);
+          audioBlobUrl = null;
+        }
+        activeFileIndicator.classList.add("hidden");
+        activeFilename.textContent = "";
+        recordingTimerText.textContent = "0:00";
+        hiddenAudioFile.value = "";
+      }
+      
+      // --- Helpers to Convert File to Base64 ---
+      function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => {
+            const resultStr = reader.result;
+            const base64Data = resultStr.split(",")[1];
+            resolve(base64Data);
+          };
+          reader.onerror = (err) => reject(err);
+        });
+      }
+      
+      // Initialize Web Speech API voices list for Chrome/Safari
+      if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.getVoices();
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+          window.speechSynthesis.onvoiceschanged = () => {
+            window.speechSynthesis.getVoices();
+          };
+        }
+      }
+      
+      // High-quality Client-Side Web Speech synthesis fallback when API quota is exhausted
+      let activeSpeechButton = null;
+      function playBrowserSpeechFallback(text, lang = "pt-BR", playBtn = null) {
+        try {
+          if (!window.speechSynthesis) return;
+          
+          if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+            if (activeSpeechButton) {
+              activeSpeechButton.innerHTML = '<i data-lucide="play" class="h-4 w-4"></i>';
+              if (window.lucide) window.lucide.createIcons();
+            }
+            // If clicking the same active button, we just stop and return
+            if (activeSpeechButton === playBtn) {
+              activeSpeechButton = null;
+              return;
+            }
+          }
+          
+          activeSpeechButton = playBtn;
+          const cleanedText = text.replace(/<[^>]*>/g, ""); // strip xml tags if any
+          const utterance = new SpeechSynthesisUtterance(cleanedText);
+          utterance.lang = lang;
+          
+          // Try to select an appropriate voice
+          const voices = window.speechSynthesis.getVoices();
+          let selectedVoice = null;
+          
+          if (lang.startsWith("en")) {
+            // Find an English male/grave sounding voice if possible
+            selectedVoice = voices.find(v => v.lang.startsWith("en") && v.name.toLowerCase().includes("male") && v.name.toLowerCase().includes("google")) ||
+                            voices.find(v => v.lang.startsWith("en") && v.name.toLowerCase().includes("male")) ||
+                            voices.find(v => v.lang.startsWith("en") && v.name.toLowerCase().includes("natural")) ||
+                            voices.find(v => v.lang.startsWith("en"));
+            utterance.pitch = 0.75; // Slower, deeper
+            utterance.rate = 0.85;
+          } else {
+            // Portuguese male voice if possible
+            selectedVoice = voices.find(v => v.lang.startsWith("pt") && v.name.toLowerCase().includes("male")) ||
+                            voices.find(v => v.lang.startsWith("pt") && v.name.toLowerCase().includes("natural")) ||
+                            voices.find(v => v.lang.startsWith("pt"));
+            utterance.pitch = 0.70; // Deeper grave tone
+            utterance.rate = 0.85;  // More solemn
+          }
+          
+          if (selectedVoice) {
+            utterance.voice = selectedVoice;
+          }
+          
+          if (playBtn) {
+            utterance.onstart = () => {
+              playBtn.innerHTML = '<i data-lucide="pause" class="h-4 w-4"></i>';
+              if (window.lucide) window.lucide.createIcons();
+            };
+            utterance.onend = () => {
+              playBtn.innerHTML = '<i data-lucide="play" class="h-4 w-4"></i>';
+              if (window.lucide) window.lucide.createIcons();
+              activeSpeechButton = null;
+            };
+            utterance.onerror = () => {
+              playBtn.innerHTML = '<i data-lucide="play" class="h-4 w-4"></i>';
+              if (window.lucide) window.lucide.createIcons();
+              activeSpeechButton = null;
+            };
+          }
+          
+          // Show user-friendly toast/alert
+          const notification = document.createElement("div");
+          notification.className = "fixed bottom-5 right-5 bg-[#18181b] border border-yellow-500/30 text-yellow-500 px-4 py-3 text-xs font-mono rounded shadow-xl backdrop-blur-md z-50 flex items-center gap-2.5 max-w-sm";
+          notification.innerHTML = `<span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span></span> <span>Cota da API atingida (10/dia). Iniciando simulador de voz de Alistair...</span>`;
+          document.body.appendChild(notification);
+          
+          setTimeout(() => {
+            notification.remove();
+          }, 5000);
+          
+          window.speechSynthesis.speak(utterance);
+        } catch (e) {
+          console.warn("SpeechSynthesis error:", e);
+        }
+      }
+      
+      // --- Audio Players Logic ---
+      function setupCustomPlayer(audioEl, playBtn, seekbar, currentTxt, totalTxt) {
+        let isSeeking = false;
+        
+        playBtn.addEventListener("click", () => {
+          const hasRealSrc = audioEl.src && !audioEl.src.endsWith("#fallback") && !audioEl.src.startsWith("http://localhost:3000/#") && !audioEl.src.endsWith("#");
+          if (!hasRealSrc) {
+            // Trigger browser speech synthesis fallback!
+            if (audioEl === globalAudioElement && latestResult) {
+              playBrowserSpeechFallback(latestResult.characterText || latestResult.text, "pt-BR", playBtn);
+            } else if (audioEl === englishAudioElement && latestResult) {
+              playBrowserSpeechFallback(latestResult.translation, "en-GB", playBtn);
+            }
+            return;
+          }
+          if (audioEl.paused) {
+            audioEl.play().catch(e => console.warn("Playback blocked on click:", e));
+          } else {
+            audioEl.pause();
+          }
+        });
+        
+        audioEl.addEventListener("play", () => {
+          playBtn.innerHTML = '<i data-lucide="pause" class="h-4 w-4"></i>';
+          lucide.createIcons();
+        });
+        
+        audioEl.addEventListener("pause", () => {
+          playBtn.innerHTML = '<i data-lucide="play" class="h-4 w-4"></i>';
+          lucide.createIcons();
+        });
+        
+        audioEl.addEventListener("loadedmetadata", () => {
+          seekbar.max = Math.floor(audioEl.duration || 100);
+          totalTxt.textContent = formatTime(audioEl.duration || 0);
+          currentTxt.textContent = "0:00";
+          seekbar.value = 0;
+        });
+        
+        audioEl.addEventListener("timeupdate", () => {
+          if (!isSeeking) {
+            seekbar.value = Math.floor(audioEl.currentTime);
+            currentTxt.textContent = formatTime(audioEl.currentTime);
+          }
+        });
+        
+        audioEl.addEventListener("ended", () => {
+          playBtn.innerHTML = '<i data-lucide="play" class="h-4 w-4"></i>';
+          lucide.createIcons();
+          seekbar.value = 0;
+          currentTxt.textContent = "0:00";
+        });
+        
+        seekbar.addEventListener("input", () => {
+          isSeeking = true;
+          currentTxt.textContent = formatTime(seekbar.value);
+        });
+        
+        seekbar.addEventListener("change", () => {
+          audioEl.currentTime = seekbar.value;
+          isSeeking = false;
+        });
+      }
+      
+      // Convert a base64 string (with or without data prefix) to a Blob URL
+      function base64ToBlobUrl(base64, defaultMime = "audio/wav") {
+        if (!base64) return "";
+        if (base64.startsWith("blob:") || base64.startsWith("http")) {
+          return base64; // Already a URL
+        }
+        
+        let mimeType = defaultMime;
+        let base64Data = base64;
+        
+        if (base64.startsWith("data:")) {
+          const parts = base64.split(";base64,");
+          if (parts.length === 2) {
+            mimeType = parts[0].replace("data:", "");
+            base64Data = parts[1];
+          }
+        }
+        
+        try {
+          const binary = atob(base64Data);
+          const len = binary.length;
+          const bytes = new Uint8Array(len);
+          for (let i = 0; i < len; i++) {
+            bytes[i] = binary.charCodeAt(i);
+          }
+          const blob = new Blob([bytes], { type: mimeType });
+          return URL.createObjectURL(blob);
+        } catch (e) {
+          console.error("Error converting base64 to Blob URL:", e);
+          return base64; // Fallback to data URL
+        }
+      }
+
+      function releaseAudioUrls() {
+        if (activeGlobalAudioBlobUrl) {
+          try { URL.revokeObjectURL(activeGlobalAudioBlobUrl); } catch(e) {}
+          activeGlobalAudioBlobUrl = null;
+        }
+        if (activeEnglishAudioBlobUrl) {
+          try { URL.revokeObjectURL(activeEnglishAudioBlobUrl); } catch(e) {}
+          activeEnglishAudioBlobUrl = null;
+        }
+      }
+      
+      function downloadAudio(audioUrl, filename) {
+        if (!audioUrl) return;
+        const link = document.createElement("a");
+        link.href = audioUrl;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+      
+      // Stop all playing audio elements
+      function stopAllAudioPlayback() {
+        globalAudioElement.pause();
+        globalAudioElement.currentTime = 0;
+        englishAudioElement.pause();
+        englishAudioElement.currentTime = 0;
+      }
+      
+      // --- IndexedDB Storage Helper for Large Audio History ---
+      const DB_NAME = "TemplarAppDB";
+      const DB_VERSION = 1;
+      const STORE_NAME = "HistoryStore";
+      let dbInstance = null;
+
+      function initDB() {
+        return new Promise((resolve) => {
+          try {
+            const request = indexedDB.open(DB_NAME, DB_VERSION);
+            request.onerror = (event) => {
+              console.error("IndexedDB open error:", event.target.error);
+              resolve(null);
+            };
+            request.onsuccess = (event) => {
+              dbInstance = event.target.result;
+              resolve(dbInstance);
+            };
+            request.onupgradeneeded = (event) => {
+              const db = event.target.result;
+              if (!db.objectStoreNames.contains(STORE_NAME)) {
+                db.createObjectStore(STORE_NAME);
+              }
+            };
+          } catch (e) {
+            console.error("IndexedDB initialization failed:", e);
+            resolve(null);
+          }
+        });
+      }
+
+      async function getHistoryFromDB() {
+        if (!dbInstance) {
+          await initDB();
+        }
+        if (!dbInstance) {
+          return loadHistoryFromLocalStorage();
+        }
+        return new Promise((resolve) => {
+          try {
+            const transaction = dbInstance.transaction([STORE_NAME], "readonly");
+            const store = transaction.objectStore(STORE_NAME);
+            const request = store.get("templar_history");
+            request.onsuccess = () => {
+              resolve(request.result || loadHistoryFromLocalStorage());
+            };
+            request.onerror = () => {
+              console.error("IndexedDB get error:", request.error);
+              resolve(loadHistoryFromLocalStorage());
+            };
+          } catch (e) {
+            console.error("IndexedDB get transaction error:", e);
+            resolve(loadHistoryFromLocalStorage());
+          }
+        });
+      }
+
+      async function saveHistoryToDB(items) {
+        if (!dbInstance) {
+          await initDB();
+        }
+        if (!dbInstance) {
+          saveHistoryToLocalStorage(items);
+          return;
+        }
+        return new Promise((resolve) => {
+          try {
+            const transaction = dbInstance.transaction([STORE_NAME], "readwrite");
+            const store = transaction.objectStore(STORE_NAME);
+            const request = store.put(items, "templar_history");
+            request.onsuccess = () => {
+              // Also keep truncated version in localStorage as fallback
+              saveHistoryToLocalStorage(items);
+              resolve(true);
+            };
+            request.onerror = () => {
+              console.error("IndexedDB put error:", request.error);
+              saveHistoryToLocalStorage(items);
+              resolve(false);
+            };
+          } catch (e) {
+            console.error("IndexedDB put transaction error:", e);
+            saveHistoryToLocalStorage(items);
+            resolve(false);
+          }
+        });
+      }
+
+      function loadHistoryFromLocalStorage() {
+        try {
+          const raw = localStorage.getItem("templar_history");
+          return raw ? JSON.parse(raw) : [];
+        } catch (e) {
+          console.error("LocalStorage load error:", e);
+          return [];
+        }
+      }
+
+      function saveHistoryToLocalStorage(items) {
+        try {
+          // Store truncated version without the huge audios in localStorage
+          // so we don't hit the 5MB limit but keep metadata as safety net
+          const truncated = items.map(item => ({
+            ...item,
+            audioUrl: item.audioUrl && item.audioUrl.length > 5000 ? "" : item.audioUrl,
+            englishAudioUrl: item.englishAudioUrl && item.englishAudioUrl.length > 5000 ? "" : item.englishAudioUrl
+          }));
+          localStorage.setItem("templar_history", JSON.stringify(truncated));
+        } catch (e) {
+          console.warn("LocalStorage save fallback failed:", e);
+        }
+      }
+
+      // --- History Controllers ---
+      async function loadHistoryFromStorage() {
+        try {
+          historyItems = await getHistoryFromDB();
+        } catch (e) {
+          console.error("Failed to load history:", e);
+          historyItems = [];
+        }
+        renderHistoryGrid();
+      }
+      
+      async function saveHistoryToStorage() {
+        try {
+          await saveHistoryToDB(historyItems);
+        } catch (e) {
+          console.error("Failed to save history:", e);
+        }
+        renderHistoryGrid();
+      }
+      
+      function deleteHistoryItem(id) {
+        historyItems = historyItems.filter(item => item.id !== id);
+        saveHistoryToStorage();
+      }
+      
+      function renderHistoryGrid() {
+        historyGridContainer.innerHTML = "";
+        
+        if (historyItems.length === 0) {
+          historyEmptyState.classList.remove("hidden");
+          historyCountBadge.textContent = "0 REGISTROS";
+          return;
+        }
+        
+        historyEmptyState.classList.add("hidden");
+        historyCountBadge.textContent = `${historyItems.length} ${historyItems.length === 1 ? "REGISTRO" : "REGISTROS"}`;
+        
+        historyItems.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "border border-[#27272a] p-4 bg-[#121214]/60 hover:border-[#52525b] transition-all flex flex-col justify-between gap-3 relative group rounded";
+          
+          const header = document.createElement("div");
+          header.className = "flex justify-between items-start";
+          const timestamp = document.createElement("span");
+          timestamp.className = "text-[8px] font-mono text-[#52525b]";
+          timestamp.textContent = item.timestamp;
+          const voiceBadge = document.createElement("span");
+          voiceBadge.className = "text-[8px] font-mono bg-[#1c1c1f] text-[#ef4444] px-1.5 py-0.5 rounded uppercase";
+          voiceBadge.textContent = item.voice;
+          
+          header.appendChild(timestamp);
+          header.appendChild(voiceBadge);
+          
+          const textBlock = document.createElement("div");
+          textBlock.className = "space-y-1.5 flex-1";
+          const labelText = document.createElement("span");
+          labelText.className = "block text-[8px] uppercase tracking-wider text-[#52525b] font-mono";
+          labelText.textContent = item.characterText ? "Resposta do Cavaleiro" : "Sentença Proferida";
+          
+          const transcriptText = document.createElement("p");
+          transcriptText.className = "text-xs font-serif italic text-[#a1a1aa] line-clamp-3 leading-relaxed";
+          transcriptText.textContent = `"${item.characterText || item.text}"`;
+          
+          textBlock.appendChild(labelText);
+          textBlock.appendChild(transcriptText);
+          
+          // English translation thumbnail (if exists)
+          let translationBox = null;
+          if (item.translation) {
+            translationBox = document.createElement("div");
+            translationBox.className = "border-t border-[#27272a]/40 pt-2 space-y-1";
+            const transLabel = document.createElement("span");
+            transLabel.className = "block text-[8px] uppercase tracking-wider text-[#52525b] font-mono";
+            transLabel.textContent = "Tradução Medieval";
+            const transText = document.createElement("p");
+            transText.className = "text-[11px] font-serif italic text-[#71717a] line-clamp-2 leading-relaxed";
+            transText.textContent = item.translation;
+            
+            translationBox.appendChild(transLabel);
+            translationBox.appendChild(transText);
+          }
+          
+          // Action triggers
+          const actionsRow = document.createElement("div");
+          actionsRow.className = "flex items-center justify-between border-t border-[#27272a]/40 pt-3";
+          
+          const leftActions = document.createElement("div");
+          leftActions.className = "flex items-center gap-2";
+          
+          const playBtn = document.createElement("button");
+          playBtn.className = "px-3 py-1.5 border border-[#ef4444]/40 bg-[#ef4444]/5 hover:bg-[#ef4444]/15 transition-all flex items-center gap-1.5 text-[9px] font-mono text-white uppercase rounded";
+          playBtn.innerHTML = '<i data-lucide="play" class="h-3 w-3 text-[#ef4444]"></i> Ouvir';
+          playBtn.addEventListener("click", () => {
+            latestResult = item;
+            loadResultIntoActivePanel();
+            globalAudioElement.play();
+          });
+          
+          leftActions.appendChild(playBtn);
+          
+          // English listening history support
+          if (item.translation) {
+            const engBtn = document.createElement("button");
+            engBtn.className = "text-[9px] font-mono text-[#71717a] hover:text-[#ef4444] uppercase flex items-center gap-1";
+            
+            if (item.englishAudioUrl) {
+              engBtn.innerHTML = '<i data-lucide="music" class="h-3 w-3"></i> Ouvir EN';
+              engBtn.addEventListener("click", () => {
+                latestResult = item;
+                loadResultIntoActivePanel();
+                // Play English
+                setTimeout(() => {
+                  englishAudioElement.play();
+                }, 100);
+              });
+            } else {
+              engBtn.innerHTML = '<i data-lucide="languages" class="h-3 w-3"></i> Gerar EN';
+              engBtn.addEventListener("click", async (e) => {
+                e.stopPropagation();
+                await handleGenerateEnglishSpeechForHistoryItem(item);
+              });
+            }
+            leftActions.appendChild(engBtn);
+          }
+          
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "text-[#52525b] hover:text-red-500 transition-colors p-1";
+          deleteBtn.innerHTML = '<i data-lucide="trash-2" class="h-3.5 w-3.5"></i>';
+          deleteBtn.title = "Excluir registro";
+          deleteBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            deleteHistoryItem(item.id);
+          });
+          
+          actionsRow.appendChild(leftActions);
+          actionsRow.appendChild(deleteBtn);
+          
+          card.appendChild(header);
+          card.appendChild(textBlock);
+          if (translationBox) card.appendChild(translationBox);
+          card.appendChild(actionsRow);
+          
+          historyGridContainer.appendChild(card);
+        });
+        
+        lucide.createIcons();
+      }
+      
+      // Load current latestResult state into the active view result panel
+      function loadResultIntoActivePanel() {
+        if (!latestResult) {
+          resultPanel.classList.add("hidden");
+          return;
+        }
+        
+        resultPanel.classList.remove("hidden");
+        resultVoiceBadge.textContent = `VOZ: ${latestResult.voice.toUpperCase()}`;
+        
+        // Release old Object URLs to prevent memory leaks
+        releaseAudioUrls();
+        
+        // Create new Blob URL
+        activeGlobalAudioBlobUrl = base64ToBlobUrl(latestResult.audioUrl, "audio/wav");
+        
+        // Load audios src
+        globalAudioElement.src = activeGlobalAudioBlobUrl;
+        globalAudioElement.load();
+        
+        resultTranscription.textContent = `"${latestResult.text}"`;
+        
+        if (latestResult.characterText) {
+          resultReplyText.textContent = `"${latestResult.characterText}"`;
+          resultReplyContainer.classList.remove("hidden");
+        } else {
+          resultReplyText.textContent = "";
+          resultReplyContainer.classList.add("hidden");
+        }
+        
+        // Translation Area Setup
+        if (latestResult.translation) {
+          resultEnglishText.textContent = latestResult.translation;
+          translateEnglishBtn.classList.remove("hidden");
+          
+          // Auto-reveal English translation area by default so it's instantly visible
+          englishTranslationArea.classList.remove("hidden");
+          
+          if (latestResult.englishAudioUrl) {
+            activeEnglishAudioBlobUrl = base64ToBlobUrl(latestResult.englishAudioUrl, "audio/wav");
+            englishAudioElement.src = activeEnglishAudioBlobUrl;
+            englishAudioElement.load();
+            englishPlayerPanel.classList.remove("hidden");
+            listenEnglishBtn.classList.add("hidden");
+          } else {
+            englishAudioElement.removeAttribute("src");
+            englishPlayerPanel.classList.add("hidden");
+            listenEnglishBtn.classList.remove("hidden");
+            listenEnglishBtn.disabled = false;
+          }
+        } else {
+          translateEnglishBtn.classList.add("hidden");
+          englishTranslationArea.classList.add("hidden");
+        }
+        
+        resultPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        lucide.createIcons();
+      }
+      
+      // --- API Event Handlers ---
+      
+      // Post request for TTS
+      async function handleTtsGeneration() {
+        const textToProffer = ttsEditor.innerText || "";
+        if (!textToProffer.trim()) {
+          showError("O texto para conversão de voz não pode estar vazio.");
+          return;
+        }
+        if (textToProffer.length > 500) {
+          showError("A sentença medieval excede o limite máximo de 500 caracteres.");
+          return;
+        }
+        
+        try {
+          hideError();
+          isTtsLoading = true;
+          spinnerText.textContent = "Sir Alistair está conjurando a fala...";
+          systemSpinner.classList.remove("hidden");
+          triggerTtsBtn.disabled = true;
+          
+          stopAllAudioPlayback();
+          
+          const segments = getAnnotatedSegments();
+          const pitch = inputPitch.value;
+          const rate = inputRate.value;
+          const pause = inputPause.value;
+          const emotionalWeight = inputWeight.value;
+          
+          const response = await fetch("/api/tts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              text: textToProffer,
+              segments,
+              voice: selectedVoice,
+              pitch,
+              rate,
+              pause,
+              emotionalWeight
+            })
+          });
+          
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || "Erro misterioso ao sintonizar a oratória.");
+          }
+          
+          const base64AudioUrl = data.audio ? `data:${data.mimeType || "audio/wav"};base64,${data.audio}` : null;
+          
+          const newItem = {
+            id: `tts_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+            text: textToProffer,
+            voice: selectedVoice,
+            audioUrl: base64AudioUrl,
+            translation: data.translation || null,
+            translationWithTags: data.translationWithTags || null,
+            englishAudioUrl: data.englishAudio ? `data:${data.englishMimeType || "audio/wav"};base64,${data.englishAudio}` : null,
+            timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+          };
+          
+          // Insert to the top of the history list
+          historyItems.unshift(newItem);
+          saveHistoryToStorage();
+          
+          latestResult = newItem;
+          loadResultIntoActivePanel();
+          
+          // Autoplay generated WAV speech or browser voice fallback
+          if (data.ptTtsFailed || !base64AudioUrl) {
+            setTimeout(() => {
+              playBrowserSpeechFallback(newItem.characterText || newItem.text, "pt-BR", playerPlayBtn);
+            }, 500);
+          } else {
+            globalAudioElement.play().catch(e => {
+              console.warn("Playback blocked:", e);
+              playBrowserSpeechFallback(newItem.characterText || newItem.text, "pt-BR", playerPlayBtn);
+            });
+          }
+          
+        } catch (err) {
+          showError(err.message || "Erro de conexão ao altar.");
+        } finally {
+          isTtsLoading = false;
+          systemSpinner.classList.add("hidden");
+          triggerTtsBtn.disabled = false;
+        }
+      }
+      
+      // Post request for Audio to Voice
+      async function handleAudioConvertGeneration() {
+        if (!uploadedFile) {
+          showError("Você deve gravar sua voz ou enviar um arquivo de áudio de origem antes.");
+          return;
+        }
+        
+        try {
+          hideError();
+          isAudioLoading = true;
+          spinnerText.textContent = "Alquimista está destilando sua voz...";
+          systemSpinner.classList.remove("hidden");
+          triggerAudioBtn.disabled = true;
+          
+          stopAllAudioPlayback();
+          
+          const base64Data = await fileToBase64(uploadedFile);
+          const mimeType = uploadedFile.type || "audio/webm";
+          
+          const pitch = inputPitch.value;
+          const rate = inputRate.value;
+          const pause = inputPause.value;
+          const emotionalWeight = inputWeight.value;
+          
+          const response = await fetch("/api/audio-convert", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              audioData: base64Data,
+              mimeType,
+              action: audioAction,
+              voice: selectedVoice,
+              pitch,
+              rate,
+              pause,
+              emotionalWeight
+            })
+          });
+          
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || "O sínodo faliu em traduzir o sopro divino.");
+          }
+          
+          const base64AudioUrl = data.audio ? `data:${data.mimeType || "audio/wav"};base64,${data.audio}` : null;
+          
+          const newItem = {
+            id: `v2v_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+            text: data.transcription,
+            characterText: data.characterText || null,
+            voice: selectedVoice,
+            audioUrl: base64AudioUrl,
+            translation: data.translation || null,
+            translationWithTags: data.translationWithTags || null,
+            englishAudioUrl: data.englishAudio ? `data:${data.englishMimeType || "audio/wav"};base64,${data.englishAudio}` : null,
+            timestamp: new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+          };
+          
+          historyItems.unshift(newItem);
+          saveHistoryToStorage();
+          
+          latestResult = newItem;
+          loadResultIntoActivePanel();
+          
+          // Autoplay or browser voice fallback
+          if (data.ptTtsFailed || !base64AudioUrl) {
+            setTimeout(() => {
+              playBrowserSpeechFallback(newItem.characterText || newItem.text, "pt-BR", playerPlayBtn);
+            }, 500);
+          } else {
+            globalAudioElement.play().catch(e => {
+              console.warn("Playback blocked:", e);
+              playBrowserSpeechFallback(newItem.characterText || newItem.text, "pt-BR", playerPlayBtn);
+            });
+          }
+          
+        } catch (err) {
+          showError(err.message || "Erro na conversão de áudio.");
+        } finally {
+          isAudioLoading = false;
+          systemSpinner.classList.add("hidden");
+          triggerAudioBtn.disabled = false;
+        }
+      }
+      
+      // English Voice Speech request
+      async function handleGenerateEnglishSpeech() {
+        if (!latestResult || !latestResult.translation) return;
+        
+        try {
+          hideError();
+          isEnglishTtsLoading = true;
+          listenEnglishBtn.disabled = true;
+          listenEnglishBtn.innerHTML = '<span class="w-3 h-3 border border-t-transparent border-[#ef4444] rounded-full animate-spin"></span> Conjurando...';
+          
+          const textToSynthesize = latestResult.translationWithTags || latestResult.translation;
+          
+          const response = await fetch("/api/tts-english", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              text: textToSynthesize,
+              voice: latestResult.voice
+            })
+          });
+          
+          const data = await response.json();
+          if (!response.ok) {
+            throw new Error(data.error || "Houve uma falha ao obter a oratória em inglês.");
+          }
+          
+          let base64AudioUrl = null;
+          if (data.fallbackRequired || !data.audio) {
+            base64AudioUrl = "#fallback";
+          } else {
+            base64AudioUrl = `data:${data.mimeType || "audio/wav"};base64,${data.audio}`;
+          }
+          
+          // Update active result state
+          latestResult.englishAudioUrl = base64AudioUrl;
+          
+          // Update the specific history item too
+          const matchedHistItem = historyItems.find(item => item.id === latestResult.id);
+          if (matchedHistItem) {
+            matchedHistItem.englishAudioUrl = base64AudioUrl;
+            saveHistoryToStorage();
+          }
+          
+          if (base64AudioUrl === "#fallback") {
+            englishAudioElement.removeAttribute("src");
+            englishPlayerPanel.classList.remove("hidden");
+            listenEnglishBtn.classList.add("hidden");
+            playBrowserSpeechFallback(latestResult.translation, "en-GB", englishPlayBtn);
+          } else {
+            activeEnglishAudioBlobUrl = base64ToBlobUrl(base64AudioUrl, "audio/wav");
+            englishAudioElement.src = activeEnglishAudioBlobUrl;
+            englishAudioElement.load();
+            englishPlayerPanel.classList.remove("hidden");
+            listenEnglishBtn.classList.add("hidden");
+            
+            // Play english WAV directly
+            englishAudioElement.play().catch(e => {
+              console.warn("Playback blocked:", e);
+              playBrowserSpeechFallback(latestResult.translation, "en-GB", englishPlayBtn);
+            });
+          }
+          
+        } catch (err) {
+          showError(err.message || "Erro ao obter o discurso em inglês medieval.");
+          listenEnglishBtn.innerHTML = '<i data-lucide="music" class="h-3 w-3 text-[#ef4444]"></i> Ouvir em Inglês Medieval';
+          listenEnglishBtn.disabled = false;
+        } finally {
+          isEnglishTtsLoading = false;
+          lucide.createIcons();
+        }
+      }
+      
+      // Secondary helper for history row generation triggers
+      async function handleGenerateEnglishSpeechForHistoryItem(item) {
+        try {
+          hideError();
+          const textToSynthesize = item.translationWithTags || item.translation;
+          
+          const response = await fetch("/api/tts-english", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              text: textToSynthesize,
+              voice: item.voice
+            })
+          });
+          
+          const data = await response.json();
+          if (!response.ok) return;
+          
+          let base64AudioUrl = null;
+          if (data.fallbackRequired || !data.audio) {
+            base64AudioUrl = "#fallback";
+          } else {
+            base64AudioUrl = `data:${data.mimeType || "audio/wav"};base64,${data.audio}`;
+          }
+          
+          item.englishAudioUrl = base64AudioUrl;
+          saveHistoryToStorage();
+          
+          // If this is currently selected in active player, reload
+          if (latestResult && latestResult.id === item.id) {
+            latestResult = item;
+            loadResultIntoActivePanel();
+            if (base64AudioUrl === "#fallback") {
+              playBrowserSpeechFallback(latestResult.translation, "en-GB", englishPlayBtn);
+            }
+          }
+        } catch (err) {
+          console.error("Error generating history EN speech:", err);
+        }
+      }
+      
+      // --- Event Listeners binding ---
+      function setupEventListeners() {
+        // Tab click listeners
+        tabTtsBtn.addEventListener("click", () => {
+          activeTab = "tts";
+          tabTtsBtn.className = "flex-1 py-4 px-6 font-serif text-sm tracking-widest uppercase transition-all border-b-2 border-[#ef4444] text-[#e4e4e7] bg-[#141416]/50";
+          tabAudioBtn.className = "flex-1 py-4 px-6 font-serif text-sm tracking-widest uppercase transition-all border-b-2 border-transparent text-[#52525b] hover:text-[#a1a1aa]";
+          formTts.classList.remove("hidden");
+          formAudio.classList.add("hidden");
+          triggerTtsBtn.classList.remove("hidden");
+          triggerAudioBtn.classList.add("hidden");
+          hideError();
+        });
+        
+        tabAudioBtn.addEventListener("click", () => {
+          activeTab = "audio";
+          tabAudioBtn.className = "flex-1 py-4 px-6 font-serif text-sm tracking-widest uppercase transition-all border-b-2 border-[#ef4444] text-[#e4e4e7] bg-[#141416]/50";
+          tabTtsBtn.className = "flex-1 py-4 px-6 font-serif text-sm tracking-widest uppercase transition-all border-b-2 border-transparent text-[#52525b] hover:text-[#a1a1aa]";
+          formAudio.classList.remove("hidden");
+          formTts.classList.add("hidden");
+          triggerAudioBtn.classList.remove("hidden");
+          triggerTtsBtn.classList.add("hidden");
+          hideError();
+        });
+        
+        // Voice Action (repeat vs reply)
+        actionRepeatBtn.addEventListener("click", () => {
+          audioAction = "repeat";
+          actionRepeatBtn.className = "py-3 px-4 text-center border font-mono text-xs uppercase tracking-wider transition-all border-[#ef4444] bg-[#ef4444]/5 text-[#e4e4e7]";
+          actionReplyBtn.className = "py-3 px-4 text-center border font-mono text-xs uppercase tracking-wider transition-all border-[#27272a] bg-[#0f0f11] text-[#71717a] hover:border-[#52525b]";
+        });
+        
+        actionReplyBtn.addEventListener("click", () => {
+          audioAction = "reply";
+          actionReplyBtn.className = "py-3 px-4 text-center border font-mono text-xs uppercase tracking-wider transition-all border-[#ef4444] bg-[#ef4444]/5 text-[#e4e4e7]";
+          actionRepeatBtn.className = "py-3 px-4 text-center border font-mono text-xs uppercase tracking-wider transition-all border-[#27272a] bg-[#0f0f11] text-[#71717a] hover:border-[#52525b]";
+        });
+        
+        // ContentEditable inputs
+        ttsEditor.addEventListener("input", () => {
+          updateCharCounter();
+        });
+        
+        // Microphone recorder trigger
+        recordActionBtn.addEventListener("click", () => {
+          if (!isRecording) {
+            startMicRecording();
+          } else {
+            stopMicRecording();
+          }
+        });
+        
+        // Upload trigger
+        dropZone.addEventListener("click", (e) => {
+          if (e.target.tagName !== "BUTTON" && e.target.parentElement.tagName !== "BUTTON") {
+            hiddenAudioFile.click();
+          }
+        });
+        
+        hiddenAudioFile.addEventListener("change", (e) => {
+          if (e.target.files && e.target.files.length > 0) {
+            handleSelectedFile(e.target.files[0]);
+          }
+        });
+        
+        clearFileBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          clearActiveFile();
+        });
+        
+        // Drag over drop handlers
+        dropZone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          dropZone.classList.add("border-[#ef4444]", "bg-[#121215]/50");
+        });
+        
+        dropZone.addEventListener("dragleave", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("border-[#ef4444]", "bg-[#121215]/50");
+        });
+        
+        dropZone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("border-[#ef4444]", "bg-[#121215]/50");
+          if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+            handleSelectedFile(e.dataTransfer.files[0]);
+          }
+        });
+        
+        // Sliders value updates
+        inputWeight.addEventListener("input", () => {
+          sliderWeightVal.textContent = `${inputWeight.value}%`;
+        });
+        inputPitch.addEventListener("input", () => {
+          sliderPitchVal.textContent = `${inputPitch.value}%`;
+        });
+        inputRate.addEventListener("input", () => {
+          sliderRateVal.textContent = `${inputRate.value}%`;
+        });
+        inputPause.addEventListener("input", () => {
+          sliderPauseVal.textContent = `${inputPause.value}%`;
+        });
+        
+        // Actions execution triggers
+        triggerTtsBtn.addEventListener("click", handleTtsGeneration);
+        triggerAudioBtn.addEventListener("click", handleAudioConvertGeneration);
+        
+        // Custom players setup
+        setupCustomPlayer(globalAudioElement, playerPlayBtn, playerSeekbar, playerTimeCurrent, playerTimeTotal);
+        setupCustomPlayer(englishAudioElement, englishPlayBtn, englishSeekbar, englishTimeCurrent, englishTimeTotal);
+        
+        // Translation trigger
+        translateEnglishBtn.addEventListener("click", () => {
+          if (englishTranslationArea.classList.contains("hidden")) {
+            englishTranslationArea.classList.remove("hidden");
+            englishTranslationArea.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          } else {
+            englishTranslationArea.classList.add("hidden");
+          }
+        });
+        
+        // English synthesise trigger
+        listenEnglishBtn.addEventListener("click", handleGenerateEnglishSpeech);
+
+        // Download triggers
+        const playerDownloadBtn = document.getElementById("player-download-btn");
+        const englishDownloadBtn = document.getElementById("english-download-btn");
+        
+        playerDownloadBtn.addEventListener("click", () => {
+          if (latestResult && latestResult.audioUrl) {
+            const ext = latestResult.audioUrl.includes("audio/wav") ? "wav" : "mp3";
+            const filename = `templario_PTBR_${latestResult.id}.${ext}`;
+            downloadAudio(latestResult.audioUrl, filename);
+          }
+        });
+        
+        englishDownloadBtn.addEventListener("click", () => {
+          if (latestResult && latestResult.englishAudioUrl) {
+            const ext = latestResult.englishAudioUrl.includes("audio/wav") ? "wav" : "mp3";
+            const filename = `templario_ING_${latestResult.id}.${ext}`;
+            downloadAudio(latestResult.englishAudioUrl, filename);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

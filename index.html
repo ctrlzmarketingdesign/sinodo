@@ -1510,9 +1510,19 @@
             })
           });
           
-          const data = await response.json();
+          let data = null;
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            try {
+              data = await response.json();
+            } catch (jsonErr) {
+              console.warn("Falha ao analisar JSON:", jsonErr);
+            }
+          }
+          
           if (!response.ok) {
-            throw new Error(data.error || "Erro misterioso ao sintonizar a oratória.");
+            const errorMsg = (data && data.error) ? data.error : `Erro do servidor (${response.status}): ${response.statusText || "Falha na comunicação"}`;
+            throw new Error(errorMsg);
           }
           
           const base64AudioUrl = data.audio ? `data:${data.mimeType || "audio/wav"};base64,${data.audio}` : null;
@@ -1595,9 +1605,19 @@
             })
           });
           
-          const data = await response.json();
+          let data = null;
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            try {
+              data = await response.json();
+            } catch (jsonErr) {
+              console.warn("Falha ao analisar JSON:", jsonErr);
+            }
+          }
+          
           if (!response.ok) {
-            throw new Error(data.error || "O sínodo faliu em traduzir o sopro divino.");
+            const errorMsg = (data && data.error) ? data.error : `Erro do servidor (${response.status}): ${response.statusText || "Falha na comunicação"}`;
+            throw new Error(errorMsg);
           }
           
           const base64AudioUrl = data.audio ? `data:${data.mimeType || "audio/wav"};base64,${data.audio}` : null;
@@ -1662,9 +1682,19 @@
             })
           });
           
-          const data = await response.json();
+          let data = null;
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            try {
+              data = await response.json();
+            } catch (jsonErr) {
+              console.warn("Falha ao analisar JSON:", jsonErr);
+            }
+          }
+          
           if (!response.ok) {
-            throw new Error(data.error || "Houve uma falha ao obter a oratória em inglês.");
+            const errorMsg = (data && data.error) ? data.error : `Erro do servidor (${response.status}): ${response.statusText || "Falha na comunicação"}`;
+            throw new Error(errorMsg);
           }
           
           let base64AudioUrl = null;
